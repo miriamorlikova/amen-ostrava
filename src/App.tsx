@@ -12,7 +12,7 @@ function App() {
   const location = useLocation();
 
   return (
-    <div className=" h-screen ">
+    <div className="h-screen">
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route index element={<MainSection />} />

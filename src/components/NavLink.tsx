@@ -5,12 +5,13 @@ import { Link } from "react-router-dom";
 type NavLinkProps = {
   to: string;
   children: React.ReactNode;
+  theme: "light" | "dark";
 };
 
-// od 1200px schovat a dat vyskakovaci navigaci na bok
-
-const NavLink = ({ to, children }: NavLinkProps) => {
+const NavLink = ({ to, children, theme }: NavLinkProps) => {
   const [hovered, setHovered] = useState(false);
+  const borderColor =
+    theme === "light" ? "border-primary-light" : "border-primary-dark";
 
   return (
     <motion.div
@@ -20,8 +21,8 @@ const NavLink = ({ to, children }: NavLinkProps) => {
     >
       <Link to={to}>{children}</Link>
       <div
-        className={`border-t-4 border-primary-light rounded-xl transition-all duration-300 ease-in-out ${hovered ? "w-full" : "w-0 border-transparent"}`}
-      ></div>
+        className={`border-t-4 ${borderColor} rounded-xl transition-all duration-300 ease-in-out ${hovered ? "w-full" : "w-0 border-transparent"}`}
+      />
     </motion.div>
   );
 };

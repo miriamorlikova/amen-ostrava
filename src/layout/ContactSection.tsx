@@ -1,4 +1,3 @@
-import React from "react";
 import withTransition from "../utils/withTransition";
 type ContactSectionProps = {};
 
