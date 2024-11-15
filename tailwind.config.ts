@@ -6,7 +6,10 @@ module.exports = {
       colors: {
         "primary-light": "#FFFCF5",
         "primary-dark": "#131313",
-      },
+        "beige": "#FAE6C3",
+        "brown": "#9B9380"
+      }
+      ,
 
       fontFamily: {
         manjari: ["Manjari", "sans-serif"],
