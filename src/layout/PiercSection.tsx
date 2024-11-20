@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import withTransition from "../utils/withTransition";
 import backgroundImg from "../assets/section-4-bg.png";
 import useMediaQuery from "../utils/useMediaQuery";
@@ -17,7 +16,11 @@ const PiercSection = (props: PiercSectionProps) => {
 		>
 			{isNavBarVisible && (
 				<div className="bg-primary-light">
-					<NavBar theme="light" />
+					<NavBar
+						theme="light"
+						navbarBackground="opacity-80"
+						backgroundImage={backgroundImg}
+					/>
 				</div>
 			)}
 			<div className="flex w-[75%] m-auto gap-10 xxl:gap-14 relative top-[15%]  h-[75%] justify-center items-center"></div>

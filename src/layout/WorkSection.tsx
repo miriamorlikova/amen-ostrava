@@ -18,6 +18,7 @@ import pierc4 from "../assets/piercings/pierc-image-4.png";
 import pierc5 from "../assets/piercings/pierc-image-5.png";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import MobileNavBar from "../components/MobileNavBar";
 
 type WorkSectionProps = {};
 
@@ -45,6 +46,7 @@ const WorkSection = ({}: WorkSectionProps) => {
 					theme="light"
 				/>
 			)}
+			<MobileNavBar theme="light" />
 
 			<div className="text-primary-light uppercase xxl:text-4xl xl:text-3xl text-2xl flex flex-col w-[85%] h-full m-auto gap-10 xxl:gap-14 relative top-[25%] ">
 				{/* LASHES */}

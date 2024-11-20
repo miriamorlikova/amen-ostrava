@@ -5,9 +5,10 @@ import NavLink from "./NavLink";
 type NavBarProps = {
 	theme: "light" | "dark";
 	navbarBackground?: string;
+	backgroundImage?: string;
 };
 
-const NavBar = ({ theme, navbarBackground }: NavBarProps) => {
+const NavBar = ({ theme, navbarBackground, backgroundImage }: NavBarProps) => {
 	const textColor =
 		theme === "light" ? "text-primary-light" : "text-primary-dark";
 	const backgroundColor = navbarBackground || "bg-transparent";
@@ -16,6 +17,15 @@ const NavBar = ({ theme, navbarBackground }: NavBarProps) => {
 	return (
 		<div
 			className={`fixed w-full z-[30] flex justify-center pt-10 pb-14 ${textColor} ${backgroundColor} transition-all duration-300 `}
+			style={
+				backgroundImage
+					? {
+							backgroundImage: `url(${backgroundImage})`,
+							backgroundSize: "cover",
+							backgroundPosition: "center",
+						}
+					: {}
+			}
 		>
 			<div className="absolute top-0 left-0">
 				<Logo theme={theme} />
