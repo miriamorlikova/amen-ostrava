@@ -26,7 +26,7 @@ const MainSection = ({}: MainSectionProps) => {
 				)}
 
 				<div className="text-primary-light uppercase absolute sm:bottom-32 bottom-10 mb-10 flex flex-col items-center w-full">
-					<h1 className="font-cormorant font-thin lg:text-[12rem] xxl:text-[14rem] mb-0 text-8xl sm:text-9xl md:text-[10rem] lg:mb-[-3.5rem]">
+					<h1 className="font-cormorant font-thin lg:text-[12rem] xxl:text-[14rem] mb-0 text-8xl sm:text-9xl md:text-[10rem] ">
 						amen
 					</h1>
 					<h3 className="lg:text-3xl text-xl sm:text-2xl xxl:text-4xl ">
