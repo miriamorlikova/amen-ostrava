@@ -7,6 +7,8 @@ import instagramLogo from "../assets/insta-logo.png";
 import emailLogo from "../assets/mail-logo.png";
 import adressLogo from "../assets/adress-logo.png";
 import ContactItem from "../components/ContactItem";
+import MobileNavBar from "../components/MobileNavBar";
+import { motion } from "framer-motion";
 
 type ContactSectionProps = {};
 
@@ -15,28 +17,46 @@ const ContactSection = (props: ContactSectionProps) => {
 	const isNavBarVisible = useMediaQuery("(min-width: 1250px)");
 
 	return (
-		<div className=" h-screen w-screen bg-brown">
-			{isNavBarVisible && (
+		<div className="min-h-screen w-screen bg-brown flex flex-col">
+			{isNavBarVisible ? (
 				<NavBar navbarBackground="bg-brown bg-opacity-[90%]" theme="dark" />
+			) : (
+				<MobileNavBar
+					theme="dark"
+					navbarBackground="bg-brown bg-opacity-[90%]"
+				/>
 			)}
 			<div
 				className={`flex w-[75%] m-auto gap-10 xxl:gap-14 relative top-[15%]  h-[75%] justify-center items-center ${isAboveMediumScreen ? "flex" : "flex-col"}`}
 			>
-				<div className="flex basis-1/2 justify-center items-center">
+				<motion.div
+					transition={{ duration: 0.6, delay: 0.3 }}
+					initial={{ opacity: 0, x: -50 }}
+					whileInView={{ opacity: 1, x: 0 }}
+					className={`flex basis-1/2 justify-center items-center ${isAboveMediumScreen ? "" : "pt-44 sm:pt-0"} `}
+				>
 					<img
 						src={contactImg}
 						alt="my salon"
-						className="xl:w-[600px] w-[90%] max-w-[600px] pt-14 h-auto max-h-[75vh] object-contain"
+						className="sm:max-w-[600px] h-auto max-h-[75vh] object-contain"
 					/>
-				</div>
-				<div className="flex flex-col gap-6 basis-1/2 max-w-[700px]">
+				</motion.div>
+
+				<motion.div
+					transition={{ duration: 0.6, delay: 0.3 }}
+					initial={{ opacity: 0, x: 50 }}
+					whileInView={{ opacity: 1, x: 0 }}
+					className={`flex flex-col gap-6 basis-1/2 max-w-[600px] ${isAboveMediumScreen ? "text-left" : "max-w-[500px]"}`}
+				>
 					<H1Text theme="dark">kontakt</H1Text>
 					<p className="text-xl xxl:text-2xl">
 						V případě zájmu o volný termín nebo v případě otázek mě prosím
 						kontaktujte přes Instagram, který je uveden níže.
 					</p>
 					{/* INSTAGRAM */}
-					<div className="flex flex-col gap-8 mt-8">
+					<div
+						className={`flex flex-col gap-6 mt-6 ${isAboveMediumScreen ? "pb-0" : "pb-24"}`}
+					>
 						<a
 							target="_blank"
 							rel="noopener noreferrer"
@@ -57,7 +77,7 @@ const ContactSection = (props: ContactSectionProps) => {
 							</ContactItem>
 						</a>
 					</div>
-				</div>
+				</motion.div>
 			</div>
 		</div>
 	);

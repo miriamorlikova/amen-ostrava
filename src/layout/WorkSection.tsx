@@ -19,10 +19,26 @@ import pierc3 from "../assets/piercings/pierc-image-3.png";
 import pierc4 from "../assets/piercings/pierc-image-4.png";
 import pierc5 from "../assets/piercings/pierc-image-5.png";
 import WorkItem from "../components/WorkItem";
+import { motion } from "framer-motion";
 
 const lashes = [lashes1, lashes2, lashes3, lashes4, lashes5];
 const eyebrows = [brows1, brows2, brows3, brows4, brows5];
 const piercings = [pierc1, pierc2, pierc3, pierc4, pierc5];
+
+const containerVariants = {
+	initial: { opacity: 0 },
+	animate: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.4,
+		},
+	},
+};
+
+const itemVariants = {
+	initial: { opacity: 0, x: -50 },
+	animate: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+};
 
 const WorkSection = () => {
 	const isNavBarVisible = useMediaQuery("(min-width: 1250px)");
@@ -74,33 +90,44 @@ const WorkSection = () => {
 				/>
 			)}
 
-			<div className="text-primary-light uppercase xxl:text-4xl xl:text-3xl text-2xl flex flex-col w-[85%] h-full m-auto gap-10 xxl:gap-14 relative">
+			<motion.div
+				initial="initial"
+				animate="animate"
+				variants={containerVariants}
+				className="text-primary-light uppercase xxl:text-4xl xl:text-3xl text-2xl flex flex-col w-[85%] h-full m-auto gap-10 xxl:gap-14 relative"
+			>
 				{/* Spacer div */}
 				<div className="h-32 sm:h-40 md:h-44 lg:h-48 xl:h-64" />
 				{/* Řasy */}
-				<WorkItem
-					title="řasy"
-					images={lashes}
-					containerRef={lashesRef}
-					width={widths.lashes}
-				/>
+				<motion.div variants={itemVariants}>
+					<WorkItem
+						title="řasy"
+						images={lashes}
+						containerRef={lashesRef}
+						width={widths.lashes}
+					/>
+				</motion.div>
 				{/* Obočí */}
-				<WorkItem
-					title="obočí"
-					images={eyebrows}
-					containerRef={browsRef}
-					width={widths.brows}
-				/>
+				<motion.div variants={itemVariants}>
+					<WorkItem
+						title="obočí"
+						images={eyebrows}
+						containerRef={browsRef}
+						width={widths.brows}
+					/>
+				</motion.div>
 				{/* Piercing */}
-				<WorkItem
-					title="piercing"
-					images={piercings}
-					containerRef={piercingsRef}
-					width={widths.piercings}
-				/>{" "}
+				<motion.div variants={itemVariants}>
+					<WorkItem
+						title="piercing"
+						images={piercings}
+						containerRef={piercingsRef}
+						width={widths.piercings}
+					/>
+				</motion.div>
 				{/* Spacer div */}
 				<div className="h-16 sm:h-20 lg:h-24 xl:h-32" />
-			</div>
+			</motion.div>
 		</div>
 	);
 };
