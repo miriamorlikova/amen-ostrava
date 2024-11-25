@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Logo from "./Logo";
 import NavLink from "./NavLink";
+import { useLocation } from "react-router-dom";
 
 type NavBarProps = {
 	theme: "light" | "dark";
@@ -13,6 +14,13 @@ const NavBar = ({ theme, navbarBackground, backgroundImage }: NavBarProps) => {
 		theme === "light" ? "text-primary-light" : "text-primary-dark";
 	const backgroundColor = navbarBackground || "bg-transparent";
 	const [isMenuOpen, setIsMenuOpen] = useState<Boolean>(false);
+	const location = useLocation();
+	const [activeNavLink, setActiveNavLink] = useState<string>(location.pathname);
+
+	// Update active link on route change
+	useEffect(() => {
+		setActiveNavLink(location.pathname);
+	}, [location.pathname]);
 
 	return (
 		<div
@@ -31,25 +39,60 @@ const NavBar = ({ theme, navbarBackground, backgroundImage }: NavBarProps) => {
 				<Logo theme={theme} />
 			</div>
 			<div className="flex xxl:gap-12 xl:gap-4 gap-2">
-				<NavLink to="/about" theme={theme}>
+				<NavLink
+					to="/about"
+					theme={theme}
+					isActive={activeNavLink === "/about"}
+					onClick={() => setActiveNavLink("/about")}
+				>
 					o mně
 				</NavLink>
-				<NavLink to="/work" theme={theme}>
+				<NavLink
+					to="/work"
+					theme={theme}
+					isActive={activeNavLink === "/work"}
+					onClick={() => setActiveNavLink("/work")}
+				>
 					práce
 				</NavLink>
-				<NavLink to="/brows" theme={theme}>
+				<NavLink
+					to="/brows"
+					theme={theme}
+					isActive={activeNavLink === "/brows"}
+					onClick={() => setActiveNavLink("/brows")}
+				>
 					obočí
 				</NavLink>
-				<NavLink to="/lashes" theme={theme}>
+				<NavLink
+					to="/lashes"
+					theme={theme}
+					isActive={activeNavLink === "/lashes"}
+					onClick={() => setActiveNavLink("/lashes")}
+				>
 					řasy
 				</NavLink>
-				<NavLink to="/piercings" theme={theme}>
+				<NavLink
+					to="/piercings"
+					theme={theme}
+					isActive={activeNavLink === "/piercings"}
+					onClick={() => setActiveNavLink("/piercings")}
+				>
 					piercing
 				</NavLink>
-				<NavLink to="/prices" theme={theme}>
+				<NavLink
+					to="/prices"
+					theme={theme}
+					isActive={activeNavLink === "/prices"}
+					onClick={() => setActiveNavLink("/prices")}
+				>
 					ceník
 				</NavLink>
-				<NavLink to="/contact" theme={theme}>
+				<NavLink
+					to="/contact"
+					theme={theme}
+					isActive={activeNavLink === "/contact"}
+					onClick={() => setActiveNavLink("/contact")}
+				>
 					kontakt
 				</NavLink>
 			</div>

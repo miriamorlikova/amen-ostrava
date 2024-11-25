@@ -50,7 +50,7 @@ const PriceListSection = (props: PriceListSectionProps) => {
 				initial="initial"
 				animate="animate"
 				variants={containerVariants}
-				className={`w-[75%]  m-auto xl:top-[20%] relative py-44 md:py-48 h-[75%] flex flex-col`}
+				className="w-[75%]  m-auto xl:top-[20%] relative py-44 md:py-48 h-[75%] flex flex-col"
 			>
 				<motion.div variants={itemVariants}>
 					<PriceItem
