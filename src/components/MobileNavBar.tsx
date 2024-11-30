@@ -21,7 +21,7 @@ const MobileNavBar = ({
 	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
 	return (
-		<div className={`fixed w-full z-[30] flex ${backgroundColor}`}>
+		<div className={`fixed w-fulll z-[30] flex ${backgroundColor}`}>
 			{/* Navbar */}
 			<motion.div
 				initial={{ y: 0 }}

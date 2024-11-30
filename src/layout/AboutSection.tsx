@@ -26,14 +26,14 @@ const AboutSection = (props: AboutSectionProps) => {
 			)}
 			<div
 				className={`flex w-[75%] m-auto gap-12 xxl:gap-14 h-full justify-center 						items-center ${
-					isAboveMediumScreen ? "flex-row pt-8" : "flex-col"
+					isAboveMediumScreen ? "flex-row pt-8" : "flex-col pt-28 gap-8"
 				}`}
 			>
 				<motion.div
 					transition={{ duration: 0.6, delay: 0.3 }}
 					initial={{ opacity: 0, x: -50 }}
 					whileInView={{ opacity: 1, x: 0 }}
-					className={`flex basis-1/2 justify-center items-center 																${isAboveMediumScreen ? "" : "pt-40"} `}
+					className={`flex basis-1/2 justify-center items-center pt-9																${isAboveMediumScreen ? "" : "pt-40"} `}
 				>
 					<img
 						src={portrait}
@@ -45,15 +45,22 @@ const AboutSection = (props: AboutSectionProps) => {
 					transition={{ duration: 0.6, delay: 0.3 }}
 					initial={{ opacity: 0, x: 50 }}
 					whileInView={{ opacity: 1, x: 0 }}
-					className={`flex flex-col gap-6 basis-1/2 max-w-[600px] 														${isAboveMediumScreen ? "text-left" : "max-w-[550px]"}`}
+					className={`flex flex-col gap-8 pt-9 basis-1/2 max-w-[600px] 														${isAboveMediumScreen ? "text-left" : "max-w-[550px]"}`}
 				>
 					<H1Text theme="dark">O mně</H1Text>
-					<p className="xxl:text-2xl text-xl pb-24">
-						Aenean fermentum risus id tortor. Itaque earum rerum hic tenetur a
-						sapiente delectus, ut aut reiciendis voluptatibus maiores alias
-						consequatur aut perferendis doloribus asperiores repellat. Nullam
-						dapibus fermentum ipsum. Praesent vitae arcu tempor neque lacinia
-						pretium. Aliquam id dolor.
+					<p className="xxl:text-2xl text-xl sm:pb-0 pb-24">
+						Ahoj, jmenuji se Kateřina Lalíková, je mi 22 let a vítám tě v Amen
+						Studiu v Ostravě! Mým snem vždy bylo mít vlastní kosmetický salon, a
+						po téměř pěti letech praxe v oboru kosmetiky a piercingu se tento
+						sen stal skutečností. V mém studiu kladu důraz na osobní a
+						profesionální přístup, protože si nesmírně vážím každého klienta,
+						který mi svěří svou důvěru. V Amen Studiu ti nabízím širokou škálu
+						služeb – od úpravy obočí a řas až po moderní piercingy, které ti
+						pomohou vyjádřit tvou jedinečnou osobnost. Každé návštěvě věnuji
+						maximální pozornost a společně probereme, co pro tebe bude nejlepší.
+						Věř mi, že společně dokážeme i to, co se zdá být nemožné. Mým cílem
+						je, abys odcházel/a nejen s dokonalým výsledkem, ale také s pocitem
+						jistoty a spokojenosti ve svých rozhodnutích.
 					</p>
 				</motion.div>
 			</div>

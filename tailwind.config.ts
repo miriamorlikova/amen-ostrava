@@ -7,7 +7,10 @@ module.exports = {
         "primary-light": "#FFFCF5",
         "primary-dark": "#131313",
         "beige": "#FAE6C3",
-        "brown": "#9B9380"
+        "brown": "#9B9380",
+        "light-gold": "#DFC153",
+        "dark-gold": "#79692D",
+        "cream": "#FFFAEC",
       }
       ,
 

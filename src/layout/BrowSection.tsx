@@ -22,7 +22,7 @@ const BrowSection = (props: BrowSectionProps) => {
 				/>
 			)}
 			<div
-				className={`flex w-[75%] m-auto gap-10 xxl:gap-14 relative top-[15%]  h-[75%] justify-center items-center ${isAboveMediumScreen ? "flex" : "flex-col"}`}
+				className={`flex w-[75%] m-auto gap-10 xxl:gap-14 relative top-[15%]  h-[75%] justify-center items-center ${isAboveMediumScreen ? "flex-row" : "flex-col sm:pt-10 "}`}
 			>
 				<motion.div
 					transition={{ duration: 0.6, delay: 0.3 }}
@@ -34,13 +34,15 @@ const BrowSection = (props: BrowSectionProps) => {
 					<p
 						className={`xxl:text-2xl text-xl ${isAboveMediumScreen ? "text-right" : "text-xl"}`}
 					>
-						Donec iaculis gravida nulla. Sed vel lectus. Donec odio t tempus
-						molestie, porttitor ut, iaculis quis, sem. Aenean id metus id velit
-						ullamcorper pulvinar. Neque porro quisquam est, qui dolorem ipsum
-						quia dolor sit amet, consectetur, adipisci velit, sed quia non
-						numquam eius modi tempora incidunt ut labore et dolore magnam
-						aliquam quaerat voluptatem. Et harum quidem rerum facilis est et
-						expedita distinctio.
+						Laminace obočí je kosmetický proces zaměřený na úpravu tvaru obočí a
+						zlepšení jeho vzhledu. Cílem je zpevnit, zvýraznit a přirozeně
+						vytvarovat obočí. Výsledek laminace vydrží obvykle 6 až 8 týdnů, v
+						závislosti na růstu a typu chloupků. Tento zákrok je ideální pro
+						osoby s řídkým nebo nepoddajným obočím, protože pomáhá dosáhnout
+						plného a upraveného vzhledu bez nutnosti každodenního líčení.
+						Nemusíš se obávat, že bude obočí příliš tmavé, vždy si dávám záležet
+						na tom, aby obočí působilo přirozeně a dokonale ladilo s tvým
+						celkovým vzhledem.
 					</p>
 				</motion.div>
 
@@ -48,7 +50,7 @@ const BrowSection = (props: BrowSectionProps) => {
 					transition={{ duration: 0.6, delay: 0.3 }}
 					initial={{ opacity: 0, x: 50 }}
 					whileInView={{ opacity: 1, x: 0 }}
-					className="flex basis-1/2 justify-center items-center pt-12 pb-24"
+					className="flex basis-1/2 justify-center items-center sm:pt-0 pt-12 sm:pb-0 pb-24"
 				>
 					<img
 						src={eyebrowImg}
