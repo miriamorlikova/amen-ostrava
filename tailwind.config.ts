@@ -6,14 +6,12 @@ module.exports = {
       colors: {
         "primary-light": "#FFFCF5",
         "primary-dark": "#131313",
-        "beige": "#FAE6C3",
-        "brown": "#9B9380",
+        beige: "#F6E5C5",
+        brown: "#C0BAAB",
+        sand: "#D2C9AE",
         "light-gold": "#DFC153",
         "dark-gold": "#79692D",
-        "cream": "#FFFAEC",
-      }
-      ,
-
+      },
       fontFamily: {
         manjari: ["Manjari", "sans-serif"],
         cormorant: ["Cormorant Unicase", "serif"],
