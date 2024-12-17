@@ -1,14 +1,12 @@
 import withTransition from "../utils/withTransition";
 
-import Logo from "../components/Logo";
 // import background from "../assets/bg-main-section.png";
 import background from "../assets/bg-main-version-3.jpeg";
 import NavBar from "../components/NavBar";
 import useMediaQuery from "../utils/useMediaQuery";
 import MobileNavBar from "../components/MobileNavBar";
-type MainSectionProps = {};
 
-const MainSection = ({}: MainSectionProps) => {
+const MainSection = () => {
   const isNavBarVisible = useMediaQuery("(min-width: 1250px)");
   return (
     <div className="relative h-screen overflow-hidden">
