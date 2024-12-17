@@ -1,6 +1,7 @@
 import withTransition from "../utils/withTransition";
 import useMediaQuery from "../utils/useMediaQuery";
 import { piercingData } from "../utils/piercingData";
+import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 
 import NavBar from "../components/NavBar";
 import MobileNavBar from "../components/MobileNavBar";

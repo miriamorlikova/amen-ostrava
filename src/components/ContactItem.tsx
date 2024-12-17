@@ -13,10 +13,11 @@ const ContactItem = ({ src, children }: ContactItemProps) => {
     <div className="flex items-center gap-4 lg:gap-8">
       <img src={src} className="h-12 w-12 xl:h-16 xl:w-16 xxl:h-20 xxl:w-20" />
       <motion.div
+        whileTap={{ scale: 0.8 }}
         onHoverStart={() => setHovered(true)}
         onHoverEnd={() => setHovered(false)}
       >
-        <p className="max-w-[290px] pt-2 text-lg sm:text-2xl xl:text-2xl">
+        <p className="w-fit max-w-[290px] pt-2 text-lg sm:text-2xl xl:text-2xl">
           {children}
         </p>
         <div

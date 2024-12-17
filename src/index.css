@@ -5,10 +5,10 @@
 @layer base {
   html,
   body {
-    @apply font-manjari bg-black m-0 p-0 w-screen;
+    @apply m-0 w-screen bg-black p-0 font-manjari;
   }
   * {
-    @apply m-0 p-0 box-border;
+    @apply m-0 box-border p-0;
   }
   a {
     @apply no-underline;

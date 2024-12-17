@@ -1,26 +1,29 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
-import MainSection from "./layout/MainSection";
-import AboutSection from "./layout/AboutSection";
-import WorkSection from "./layout/WorkSection";
-import BrowSection from "./layout/BrowSection";
-import LashSection from "./layout/LashSection";
-import PiercSection from "./layout/PiercSection";
-import ContactSection from "./layout/ContactSection";
-import PriceListSection from "./layout/PriceListSection";
+
 import { ReactLenis } from "@studio-freight/react-lenis";
+import { AnimatePresence } from "framer-motion";
+
+import AboutSection from "./layout/AboutSection";
+import BrowSection from "./layout/BrowSection";
+import ContactSection from "./layout/ContactSection";
+import LashSection from "./layout/LashSection";
+import MainSection from "./layout/MainSection";
+import PiercSection from "./layout/PiercSection";
+import PriceListSection from "./layout/PriceListSection";
+import WorkSection from "./layout/WorkSection";
 
 function App() {
   const location = useLocation();
 
   return (
-    <div className="h-screen">
-      <ReactLenis
-        root
-        options={{
-          smoothWheel: true,
-        }}
-      >
+    <ReactLenis
+      root
+      options={{
+        smoothWheel: true,
+        duration: 2,
+      }}
+    >
+      <div className="h-screen">
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route index element={<MainSection />} />
@@ -33,8 +36,8 @@ function App() {
             <Route path="/contact" element={<ContactSection />} />
           </Routes>
         </AnimatePresence>
-      </ReactLenis>
-    </div>
+      </div>
+    </ReactLenis>
   );
 }
 
