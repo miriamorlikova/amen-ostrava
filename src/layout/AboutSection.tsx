@@ -25,13 +25,13 @@ const AboutSection = () => {
         />
       )}
       <div
-        className={`m-auto flex h-full w-[75%] items-center justify-center gap-12 ${
-          isAboveMediumScreen ? "flex-row pt-8" : "flex-col gap-8 pt-28"
+        className={`m-auto flex h-full w-[75%] items-center justify-center gap-12 pt-28 ${
+          isAboveMediumScreen ? "flex-row" : "flex-col gap-8"
         }`}
       >
         <MotionDiv
           isAnimatedFrom="left"
-          className={`flex basis-1/2 items-center justify-center pt-16 ${isAboveMediumScreen ? "" : "pt-40"} `}
+          className={`flex basis-1/2 items-center justify-center pt-16 ${isAboveMediumScreen ? "" : ""} `}
         >
           <img
             src={portrait}

@@ -3,6 +3,8 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { ReactLenis } from "@studio-freight/react-lenis";
 import { AnimatePresence } from "framer-motion";
 
+import useScrollReset from "./utils/useScrollReset";
+
 import AboutSection from "./layout/AboutSection";
 import BrowSection from "./layout/BrowSection";
 import ContactSection from "./layout/ContactSection";
@@ -15,6 +17,7 @@ import WorkSection from "./layout/WorkSection";
 function App() {
   const location = useLocation();
 
+  useScrollReset(location.pathname);
   return (
     <ReactLenis
       root
