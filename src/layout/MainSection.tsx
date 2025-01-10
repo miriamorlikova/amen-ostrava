@@ -1,7 +1,7 @@
 import withTransition from "../utils/withTransition";
 
-// import background from "../assets/bg-main-section.png";
-import background from "../assets/bg-main-version-3.jpeg";
+import background from "../assets/bg-main-section.png";
+// import background from "../assets/bg-main-version-3.jpeg";
 import NavBar from "../components/NavBar";
 import useMediaQuery from "../utils/useMediaQuery";
 import MobileNavBar from "../components/MobileNavBar";
